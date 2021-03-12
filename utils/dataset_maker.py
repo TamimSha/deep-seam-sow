@@ -7,7 +7,7 @@ import pycuda.autoinit
 import pycuda.driver as driver
 from pycuda.compiler import SourceModule
 
-def generateDataset(videofile, buffer_size, scale, output_path, simulatrity_value,
+def makeDataset(videofile, buffer_size, scale, output_path, simulatrity_value,
                     start_clip=0, end_clip=0, save_index=0):
     """[summary]
 
@@ -36,7 +36,7 @@ def generateDataset(videofile, buffer_size, scale, output_path, simulatrity_valu
         return 0
 
     BATCHES = int((total_frames - start_clip - end_clip) // buffer_size)
-    THREADCOUNT = 8
+    # THREADCOUNT = 8
     remainder = (total_frames - start_clip - end_clip) % buffer_size
     total_files = 0
 

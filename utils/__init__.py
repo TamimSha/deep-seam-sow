@@ -1,2 +1,2 @@
-from typing import Generator
-from .dataset_generator import generateDataset
+from .dataset_maker import makeDataset
+from .DatasetGenerator import DatasetGenerator
